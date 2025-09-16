@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0B1220;
-      --panel: #131A26;
+      --bg: #e9eaec;
+      --panel: #eeefef;
       --text: #C9D1D9;
-      --blue: #3B82F6;
+      --blue: #5b1b1b;
       --teal: #14B8A6;
       --muted: #8A94A6;
       --radius: 14px;
@@ -26,14 +26,16 @@
     /* Navbar */
     nav {
       position:sticky; top:0; z-index:1000;
-      background:rgba(11,18,32,0.95);
+      background:#eeefef;
+      color:black;
+      font-weight: bold;
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(255,255,255,0.05);
     }
     .nav-container {
       max-width:1200px; margin:auto;
       display:flex; justify-content:space-between; align-items:center;
-      padding:15px 5%;
+      padding:5px 5%;
     }
     nav ul { list-style:none; display:flex; gap:75px; font-size:0.95rem }
     nav .btn { padding:8px 16px; border-radius:8px; font-weight:600; margin-left:8px }
@@ -53,7 +55,7 @@
     .hero-text h1 span { color:var(--blue) }
     .hero-text p { color:var(--muted); margin-bottom:20px; font-size:1rem; max-width:500px }
     .bullets { list-style:none; margin-bottom:25px }
-    .bullets li { margin-bottom:10px; display:flex; align-items:center; gap:8px; font-size:.95rem }
+    .bullets li { margin-bottom:10px; display:flex; align-items:center; gap:8px; font-size:.95rem; color:black; }
     .check { color: var(--teal); font-weight:bold }
 
     .hero-ctas { display:flex; gap:15px; flex-wrap:wrap }
@@ -90,16 +92,14 @@
   <!-- NAV -->
   <nav>
     <div class="nav-container">
-      <div class="logo"><strong style="color:#3B82F6; font-size:1.2rem;">Ozzuno</strong></div>
+      <div><img height="80px" width="70px" src="assets\logo-img.png"></div>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#pipeline">Pipeline</a></li>
+        <li><a href="#about">Home</a></li>
         <li><a href="#faq">FAQs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#contact">Request Deck</a>
+        <a class="btn btn-primary" href="#contact">Contact Us</a>
       </div>
     </div>
   </nav>
@@ -107,8 +107,8 @@
   <!-- HERO -->
   <header>
     <div class="hero-text">
-      <h1>Curated Pre-IPO Access,<br><span>Engineered for Liquidity Windows</span></h1>
-      <p>Structured exposure to pre-issue equities through staggered vintages, designed to map potential cyclic liquidity windows with disciplined, research-led selection.</p>
+      <h1><span style="color:black;">Curated Pre-IPO Access,</span><br><span>Engineered for Liquidity Windows</span></h1>
+      <p style="color:rgb(125, 125, 125)">Structured exposure to pre-issue equities through staggered vintages, designed to map potential cyclic liquidity windows with disciplined, research-led selection.</p>
       <ul class="bullets">
         <li><span class="check">✔</span> Vintage staggering aligned to listing & lock-in cycles</li>
         <li><span class="check">✔</span> Sector-diversified, research-led pipeline</li>
@@ -149,8 +149,8 @@
       <!-- Service 1 -->
       <div class="service-card">
         <div class="service-icon">💡</div>
-        <h3>Smart-RTA Services</h3>
-        <p>
+        <h3  style="color:#5b1b1b">Smart-RTA Services</h3>
+        <p style="color:rgb(83, 82, 82)">
           Tech-enabled Registrar & Transfer Agent solutions for funds, AIFs, and PMS. 
           Automate investor servicing, reporting, and compliance with seamless digital workflows.
         </p>
@@ -159,8 +159,8 @@
       <!-- Service 2 -->
       <div class="service-card">
         <div class="service-icon">📈</div>
-        <h3>Curated Pre-IPO Basket Advisory</h3>
-        <p>
+        <h3 style="color:#5b1b1b">Curated Pre-IPO Basket Advisory</h3>
+        <p style="color:rgb(83, 82, 82)">
           Research-led selection of pre-issue shares, vintage staggering, and disciplined portfolio construction 
           designed to align with listing and lock-in cycles for potential liquidity windows.
         </p>
@@ -169,8 +169,8 @@
       <!-- Service 3 -->
       <div class="service-card">
         <div class="service-icon">🏦</div>
-        <h3>End-to-End IPO Services</h3>
-        <p>
+        <h3 style="color:#5b1b1b">End-to-End IPO Services</h3>
+        <p style="color:rgb(83, 82, 82)">
           Comprehensive IPO process support — from origination, structuring, and regulatory coordination 
           to investor engagement, marketing, and post-listing compliance.
         </p>
@@ -183,11 +183,10 @@
 <style>
 /* SERVICES SECTION */
 #services {
-  background:#0B1220;
+  background:#e9eaec;
   color:#C9D1D9;
   padding:80px 5%;
   font-family:'Inter',sans-serif;
-  border-top:1px solid #1f2937;
 }
 
 .services-container {
@@ -199,13 +198,13 @@
 .services-heading {
   font-size:2rem;
   font-weight:700;
-  color:white;
+  color:black;
   margin-bottom:10px;
 }
 
 .services-subtext {
   font-size:1rem;
-  color:#9CA3AF;
+  color:#424343;
   margin-bottom:50px;
 }
 
@@ -216,8 +215,9 @@
 }
 
 .service-card {
-  background:#111827;
+  background:#dcdde0;
   padding:30px;
+  
   border-radius:12px;
   text-align:left;
   transition:transform .3s ease, box-shadow .3s ease;
@@ -265,7 +265,7 @@
           Structured exposure to pre-issue equities through staggered vintages, designed to provide potential cyclic liquidity windows as holdings approach listing and lock-in expiries at different times.
         </p>
         <p style="font-size:1.2rem"> 
-          <strong>No assurance of returns</strong> — risk-aware construction balances near-term, mid-term, and longer-dated IPO candidates across sectors and geographies.
+          <strong style="color:#5b1b1b">No assurance of returns</strong> — risk-aware construction balances near-term, mid-term, and longer-dated IPO candidates across sectors and geographies.
         </p>
         <p style="font-size:1.2rem"> 
           Built for APAC family offices seeking disciplined, research-led access to pre-IPO opportunities with transparent origination, underwriting, and stewardship.
@@ -295,7 +295,7 @@
 <style>
   /* ABOUT SECTION */
   #about {
-    background: #0B1220;
+    background:#e9eaec;
     color: #C9D1D9;
     padding: 80px 5%;
     font-family: 'Inter', sans-serif;
@@ -310,7 +310,7 @@
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    color: white;
+    color: black;
     margin-bottom: 50px;
   }
   .about-grid {
@@ -323,6 +323,7 @@
     margin-bottom: 16px;
     font-size: 1rem;
     line-height: 1.6;
+    color:rgb(84, 83, 83);
   }
   .about-text strong {
     color: white;
@@ -334,7 +335,7 @@
     
   }
   .about-card {
-    background: #131A26;
+    background: #fff;
     border-radius: 14px;
     padding: 20px;
     
@@ -349,7 +350,7 @@
   .card-title.cyan { color: #06b6d4; font-size: 25px;}
   .about-card p {
     font-size: .95rem;
-    color: #C9D1D9;
+    color: #717272;
   }
   .about-disclaimer {
     margin-top: 40px;
@@ -380,216 +381,8 @@
 
 
 
-<!-- PIPELINE SECTION -->
-<section id="pipeline">
-  <div class="pipeline-container">
 
-    <!-- Heading -->
-    <h2 class="pipeline-heading">Research-Led Pipeline</h2>
-   
 
-    <!-- Filter chips -->
-    <div class="pipeline-filters">
-      <span class="chip active">All Sectors</span>
-      <span class="chip">FinTech</span>
-      <span class="chip">HealthTech</span>
-      <span class="chip">Enterprise SaaS</span>
-      <span class="chip">Consumer Tech</span>
-    </div>
-
-    <!-- Grid of deal cards -->
-    <div class="pipeline-grid">
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag blue">FinTech</span>
-          <span class="series">Series D</span>
-        </div>
-        <h4>Expected Window: Q2 2025</h4>
-        <p>Near-term vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag teal">HealthTech</span>
-          <span class="series">Series C</span>
-        </div>
-        <h4>Expected Window: Q4 2025</h4>
-        <p>Mid-term vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag cyan">Enterprise SaaS</span>
-          <span class="series">Series E</span>
-        </div>
-        <h4>Expected Window: Q1 2025</h4>
-        <p>Near-term vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag green">Consumer Tech</span>
-          <span class="series">Series C</span>
-        </div>
-        <h4>Expected Window: Q3 2026</h4>
-        <p>Longer-dated vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag blue">FinTech</span>
-          <span class="series">Series D</span>
-        </div>
-        <h4>Expected Window: Q2 2026</h4>
-        <p>Mid-term vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag teal">HealthTech</span>
-          <span class="series">Series B</span>
-        </div>
-        <h4>Expected Window: Q1 2027</h4>
-        <p>Longer-dated vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag cyan">Enterprise SaaS</span>
-          <span class="series">Series C</span>
-        </div>
-        <h4>Expected Window: Q3 2025</h4>
-        <p>Mid-term vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-header">
-          <span class="tag green">Consumer Tech</span>
-          <span class="series">Series D</span>
-        </div>
-        <h4>Expected Window: Q4 2024</h4>
-        <p>Near-term vintage</p>
-        <small>Subject to change; no assurance</small>
-      </div>
-    </div>
-
-    <!-- Disclaimer -->
-    
-  </div>
-</section>
-
-<style>
-  /* PIPELINE */
-  #pipeline {
-        border-top:1px solid #1f2937;
-    border-bottom:1px solid #1f2937;
-
-    background:#0B1220;
-    color:#C9D1D9;
-    padding:80px 5%;
-    font-family:'Inter',sans-serif;
-    text-align:center;
-  }
-  .pipeline-container { max-width:1200px; margin:auto; }
-  .pipeline-heading {
-    font-size:2rem;
-    font-weight:700;
-    color:white;
-    margin-bottom:15px;
-  }
-  .pipeline-subtext {
-    font-size:1rem;
-    color:#C9D1D9;
-    margin-bottom:40px;
-  }
-  .pipeline-subtext .red { color:#ef4444; font-weight:600; }
-
-  /* Chips */
-  .pipeline-filters {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-    margin-bottom:40px;
-  }
-  .chip {
-    background:#131A26;
-    padding:6px 16px;
-    border-radius:20px;
-    font-size:.9rem;
-    cursor:pointer;
-    color:#C9D1D9;
-  }
-  .chip.active {
-    background:#3B82F6;
-    color:white;
-  }
-
-  /* Cards */
-  .pipeline-grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-bottom:30px;
-  }
-  .deal-card {
-    background:#10182c;
-    border-radius:14px;
-    padding:35px;
-    text-align:left;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-  }
-  .deal-header {
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:10px;
-  }
-  .tag {
-    font-size:.8rem;
-    padding:3px 8px;
-    border-radius:6px;
-    font-weight:600;
-    color:white;
-  }
-  .tag.blue { background:#3B82F6;border-radius: 16px; }
-  .tag.teal { background:#14B8A6;border-radius: 16px; }
-  .tag.cyan { background:#06b6d4;border-radius: 16px; }
-  .tag.green { background:#10b981;border-radius: 16px; }
-  .series {
-    font-size:.8rem;
-    color:#8A94A6;
-  }
-  .deal-card h4 {
-    margin:0 0 6px;
-    color:white;
-    font-size:1rem;
-    font-weight:600;
-  }
-  .deal-card p {
-    margin:0 0 4px;
-    font-size:.9rem;
-    color:#C9D1D9;
-  }
-  .deal-card small {
-    font-size:.8rem;
-    color:#8A94A6;
-  }
-
-  .pipeline-disclaimer {
-    font-size:.85rem;
-    color:#8A94A6;
-    margin-top:20px;
-  }
-</style>
 
 
 
@@ -667,117 +460,11 @@
 
 
 
-<!-- REPORTING SECTION -->
-<section id="reporting">
-  <div class="reporting-container">
-
-    <!-- Title -->
-    <h2>Transparent, CIO-Grade Reporting</h2>
-    <p>
-      Comprehensive research, vintage-level visibility, and institutional-grade risk and compliance oversight throughout the investment lifecycle.
-    </p>
-
-    <!-- Cards -->
-    <div class="reporting-cards">
-      <div class="report-card">
-        <div class="icon">📊</div>
-        <h3>Quarterly Research Notes</h3>
-        <p>In-depth analysis of portfolio companies, market conditions, and expected timeline updates for each vintage.</p>
-      </div>
-
-      <div class="report-card">
-        <div class="icon">👁️</div>
-        <h3>Vintage-Level Visibility</h3>
-        <p>Transparent reporting on individual vintage performance, risk metrics, and progress toward potential liquidity events.</p>
-      </div>
-
-      <div class="report-card">
-        <div class="icon">🛡️</div>
-        <h3>Risk & Compliance</h3>
-        <p>Institutional-grade oversight, regulatory compliance monitoring, and comprehensive risk assessment across all holdings.</p>
-      </div>
-    </div>
-
-    <!-- Button -->
-    <div class="report-btn">
-      <a href="#" class="btn-outline">Request Sample Report ↗</a>
-    </div>
-  </div>
-</section>
-
-<style>
-  /* REPORTING SECTION */
-  #reporting {
-    background:#0B1220;
-    color:#C9D1D9;
-    padding:80px 5%;
-    font-family:'Inter',sans-serif;
-    text-align:center;
-  }
-  #reporting h2 {
-    font-size:1.8rem;
-    font-weight:700;
-    color:white;
-    margin-bottom:15px;
-  }
-  #reporting p {
-    max-width:700px;
-    margin:0 auto 50px;
-    line-height:1.6;
-  }
-  .reporting-cards {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-    gap:25px;
-    margin-bottom:40px;
-  }
-  .report-card {
-    background:#111827;
-    padding:25px;
-    border-radius:12px;
-    text-align:center;
-    transition:transform .3s ease, box-shadow .3s ease;
-  }
-  .report-card:hover {
-    transform:translateY(-6px);
-    box-shadow:0 6px 20px rgba(0,0,0,.4);
-  }
-  .report-card .icon {
-    font-size:2rem;
-    margin-bottom:12px;
-  }
-  .report-card h3 {
-    color:white;
-    font-size:1.1rem;
-    margin-bottom:10px;
-  }
-  .report-card p {
-    font-size:.9rem;
-    color:#9CA3AF;
-  }
-  .report-btn {
-    margin-top:20px;
-  }
-  .btn-outline {
-    padding:12px 20px;
-    border:1px solid #3B82F6;
-    color:#3B82F6;
-    border-radius:6px;
-    text-decoration:none;
-    font-size:.95rem;
-    transition:all .3s ease;
-  }
-  .btn-outline:hover {
-    background:#3B82F6;
-    color:white;
-  }
-</style>
-
 
 <!-- FAQ SECTION -->
 <section id="faq">
   <div class="faq-container">
-    <h2>Frequently Asked Questions</h2>
+    <h2 style="color:black;">Frequently Asked Questions</h2>
 
     <div class="faq-item">
       <button class="faq-question">What is a pre-IPO basket?</button>
@@ -828,12 +515,11 @@
 <style>
   /* FAQ SECTION */
   #faq {
-    background:#0B1220;
+    background:#e9eaec;
     padding:80px 10%;
     font-family:'Inter',sans-serif;
     color:#C9D1D9;
-        border-top:1px solid #1f2937;
-    border-bottom:1px solid #1f2937;
+       
 
   }
   #faq h2 {
@@ -844,8 +530,9 @@
     color:white;
   }
   .faq-item {
-    border-bottom:1px solid #1f2937;
+    border-bottom:1px solid #dddddf;
     margin-bottom:10px;
+    
   }
   .faq-question {
     width:100%;
@@ -855,7 +542,8 @@
     padding:18px 0;
     font-size:1rem;
     font-weight:500;
-    color:#fff;
+   color:black;
+   font-weight: medium;
     cursor:pointer;
     position:relative;
   }
@@ -924,14 +612,14 @@
 <!-- CONTACT SECTION -->
 <section id="contact">
   <div class="contact-container">
-    <h2>Get In Touch</h2>
-    <p>Contact us to learn more about the Ozzuno Pre-IPO Basket and our research-led approach.</p>
+    <h2 style="color:#0B1220">Get In Touch</h2>
+    <p style="color:rgb(102, 99, 99)">Contact us to learn more about the Ozzuno Pre-IPO Basket and our research-led approach.</p>
 
     <div class="contact-grid">
       <!-- Contact Form -->
       <form class="contact-form" id="contactForm">
         <label>
-          Name
+         Name
           <input type="text" name="name" placeholder="" required>
         </label>
         <label>
@@ -946,7 +634,7 @@
           Message
           <textarea name="message" placeholder="" required></textarea>
         </label>
-        <button type="submit" class="btn-submit">Send Message</button>
+        <button  type="submit" class="btn-submit">Send Message</button>
         <p class="privacy-note">Your privacy is important to us. We will not share your information with third parties.</p>
       </form>
 
@@ -955,28 +643,28 @@
         <div class="info-item">
           <span class="icon">📞</span>
           <div>
-            <h4>Contact</h4>
+            <h4 style="color:#5b1b1b">Contact</h4>
             <p>+91-9004951331</p>
           </div>
         </div>
         <div class="info-item">
           <span class="icon">📧</span>
           <div>
-            <h4>Email</h4>
+            <h4 style="color:#5b1b1b">Email</h4>
             <p>ankit@ozzuno.com</p>
           </div>
         </div>
         <div class="info-item">
           <span class="icon">🏢</span>
           <div>
-            <h4>Headquarters</h4>
+            <h4 style="color:#5b1b1b">Headquarters</h4>
             <p>Navi Mumbai</p>
           </div>
         </div>
         <div class="info-item">
           <span class="icon">👥</span>
           <div>
-            <h4>Address</h4>
+            <h4 style="color:#5b1b1b">Address</h4>
             <p style="text-align:left">Kamdhenu 23 west, 13th Floor, Office No 1301, Koparkhairane, Navi Mumbai, Maharastra, India</p>
           </div>
         </div>
@@ -988,7 +676,7 @@
 <style>
   /* CONTACT SECTION */
   #contact {
-    background:#0B1220;
+    background:#e9eaec;
     color:#C9D1D9;
     padding:80px 5%;
     font-family:'Inter',sans-serif;
@@ -1021,15 +709,14 @@
     display:flex;
     flex-direction:column;
     font-size:.9rem;
-    color:#C9D1D9;
+    color:#5b1b1b;
   }
   .contact-form input,
   .contact-form textarea {
     margin-top:6px;
     padding:12px;
-    border:1px solid #1f2937;
     border-radius:6px;
-    background:#111827;
+    background:white;
     color:#fff;
     font-size:.95rem;
     transition:border .3s;
@@ -1044,7 +731,7 @@
     height:120px;
   }
   .btn-submit {
-    background:linear-gradient(to right,#3B82F6,#14B8A6);
+  background-color: #5b1b1b;
     color:#fff;
     padding:12px;
     border:none;
@@ -1114,12 +801,12 @@
 <style>
   /* FOOTER */
   #footer {
-    background:#0B1220;
+    background:#e9eaec;
     color:#9CA3AF;
     padding:30px 5%;
     font-family:'Inter',sans-serif;
     font-size:.9rem;
-    border-top:1px solid #1f2937;
+    border-top:1px solid #dddddd;
   }
   .footer-top {
     display:flex;
@@ -1130,7 +817,7 @@
   }
   .footer-top p {
     margin:0;
-    color:#C9D1D9;
+    color:black;
   }
   .footer-links {
     display:flex;
@@ -1294,6 +981,25 @@
 }
 </style>
 
+
+
+
+<script>
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+</script>
 
 
 
