@@ -43,6 +43,18 @@
     nav .btn { padding:12px 18px; border-radius:10px; font-weight:600; margin-left:8px }
     .btn-primary { background:var(--blue); color:white }
     .btn-ghost { background:transparent; border:1px solid var(--blue); color:var(--blue) }
+   .nav-logo-img{
+    height:280px;
+     width:200px;
+   }
+
+@media(max-width: 768px) {
+   .nav-logo-img{
+    height:180px;
+     width:150px;
+     padding: 0 20px;
+   }
+  }
 
     /* Hero */
    
@@ -186,7 +198,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-container">
-      <div><a href="#home"><img height="280px" width="200px" src="assets\logo-img.png"></a></div>
+      <div><a href="#home"><img class="nav-logo-img" src="assets\logo-img.png"></a></div>
      
       <div>
         <a class="btn btn-primary" href="#contact">Contact Us</a>
@@ -988,15 +1000,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Mobile Navbar: convert to vertical stacked links */
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
+  .nav-container{
+    max-height: 125px;
   }
   nav ul {
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    margin-top: 10px;
+    margin-top: 0px;
   }
   nav ul li a {
     display: block;
@@ -1008,6 +1019,9 @@ document.addEventListener("DOMContentLoaded", () => {
     gap: 10px;
     width: 100%;
     justify-content: flex-start;
+  }
+  .btn-primary{
+    display: none;
   }
 }
 
