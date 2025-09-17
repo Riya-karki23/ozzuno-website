@@ -9,131 +9,146 @@
     :root {
       --primary: #5b1b1b;
       --secondary: #3B82F6;
-      --bg: #f7f7f8;
-      --text: #333;
+      --text-light: #fff;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      color: var(--text-light);
+      position: relative;
+      min-height: 100vh;
+      background: url("assets/ipo-end-img.webp") no-repeat center center/cover;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      z-index: -1;
     }
 
-    /* Hero Section */
-    header {
-      background: linear-gradient(90deg, var(--primary), #7c2d2d);
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-    .hero-image {
-      width: 100%;
-      max-width: 900px;
-      display: block;
-      margin: 30px auto 0;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-    }
-
-    /* Container & Sections */
+    /* Container */
     .container {
       max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
     }
-    .section {
-      margin-bottom: 50px;
-      background: #fff;
+
+    /* Card Style */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
       padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .section:hover {
+    .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
     }
+
+    /* Hero Card */
+    .hero-card {
+      text-align: center;
+      padding: 50px 30px;
+    }
+    .hero-card h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+    .hero-card p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* Section Headings */
     h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 15px;
-      color: var(--primary);
+      color: #fff;
     }
-    p {
-      margin-bottom: 15px;
-      font-size: 1rem;
+    p, li {
+      font-size: 1.05rem;
+      color: #f2f2f2;
+      line-height: 1.6;
     }
     ul {
       padding-left: 20px;
       margin-top: 10px;
     }
     ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     /* Back Button */
     .btn-back {
-      display: inline-block;
-      margin-top: 20px;
+      align-self: center;
       background: var(--primary);
       color: #fff;
       text-decoration: none;
-      padding: 12px 20px;
+      padding: 14px 24px;
       border-radius: 8px;
-      transition: background 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(91, 27, 27, 0.3);
     }
     .btn-back:hover {
       background: #7c2d2d;
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(91, 27, 27, 0.4);
     }
 
     @media(max-width: 768px) {
-      header h1 { font-size: 2rem; }
+      .hero-card h1 { font-size: 2rem; }
+      .hero-card p { font-size: 1rem; }
+      .card { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>End-to-End IPO Services</h1>
-    <p>Comprehensive IPO process support — from origination, structuring, and regulatory coordination to investor engagement, marketing, and post-listing compliance.</p>
-    <img class="hero-image" src="assets/ipo-img.webp" alt="IPO Process">
-  </header>
-
   <div class="container">
 
-    <!-- About IPO Services -->
-    <div class="section">
+    <!-- HERO CARD -->
+    <div class="card hero-card">
+      <h1>End-to-End IPO Services</h1>
+      <p>Comprehensive IPO process support — from origination, structuring, and regulatory coordination to investor engagement, marketing, and post-listing compliance.</p>
+    </div>
+
+    <!-- ABOUT IPO SERVICES -->
+    <div class="card">
       <h2>Our IPO Expertise</h2>
       <p>Ozzuno provides end-to-end support for companies seeking to go public. We simplify the IPO journey by aligning promoters, investors, regulators, and markets under a seamless process, ensuring timely execution and compliance.</p>
     </div>
 
-    <!-- IPO Process Breakdown -->
-    <div class="section">
+    <!-- IPO PROCESS -->
+    <div class="card">
       <h2>Step-by-Step IPO Process</h2>
       <ul>
         <li>📊 <strong>Origination & Feasibility:</strong> Assess readiness, valuation, and capital market appetite.</li>
-        <li>📑 <strong>Structuring & Documentation:</strong> Work with legal and compliance teams to prepare DRHP/RHP and offer structure.</li>
-        <li>🏛️ <strong>Regulatory Approvals:</strong> Coordinate with SEBI, exchanges, and other regulators for clearances.</li>
-        <li>🎯 <strong>Investor Engagement:</strong> Identify anchor investors, conduct roadshows, and build demand book.</li>
-        <li>📢 <strong>Marketing & PR:</strong> Create IPO buzz through digital and traditional campaigns.</li>
-        <li>✅ <strong>Listing & Post-Listing:</strong> Oversee listing day activities, market stabilization, and compliance reporting.</li>
+        <li>📑 <strong>Structuring & Documentation:</strong> Prepare DRHP/RHP and finalize offer structure.</li>
+        <li>🏛️ <strong>Regulatory Approvals:</strong> Coordinate with SEBI, exchanges, and regulators for clearances.</li>
+        <li>🎯 <strong>Investor Engagement:</strong> Identify anchors, conduct roadshows, and build demand.</li>
+        <li>📢 <strong>Marketing & PR:</strong> Create IPO buzz with strategic campaigns.</li>
+        <li>✅ <strong>Listing & Post-Listing:</strong> Manage listing day, stabilization, and ongoing compliance.</li>
       </ul>
     </div>
 
-    <!-- Why Choose Section -->
-    <div class="section">
+    <!-- WHY CHOOSE -->
+    <div class="card">
       <h2>Why Partner With Ozzuno?</h2>
       <p>✅ Experience with multiple sectors and IPO sizes (SME to Main Board)<br>
          ✅ Strong network with institutional investors & market makers<br>
@@ -141,13 +156,7 @@
          ✅ Post-listing compliance and governance support</p>
     </div>
 
-    <!-- Risk Disclaimer -->
-    <div class="section">
-      <h2>Important Note</h2>
-      <p>⚠️ IPO investments and listings are subject to market risks and regulatory timelines. Past performance is not indicative of future outcomes.</p>
-    </div>
-
-    <!-- Back Button -->
+    <!-- BACK BUTTON -->
     <a href="index.html" class="btn-back">← Back to Home</a>
 
   </div>

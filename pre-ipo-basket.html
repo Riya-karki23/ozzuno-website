@@ -6,148 +6,144 @@
   <title>Ozzuno | Curated Pre-IPO Basket Advisory</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #5b1b1b;
-      --secondary: #3B82F6;
-      --bg: #f7f7f8;
-      --text: #333;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+
+    body{
+        padding: 0;
+        margin: 0;
     }
 
-    /* Hero Section */
-    header {
-      background: linear-gradient(90deg, var(--primary), #7c2d2d);
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-    .hero-image {
-      width: 100%;
-      max-width: 900px;
-      display: block;
-      margin: 30px auto 0;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-    }
+  /* ABOUT SECTION */
+  #about {
+    position: relative;
+    background: url('assets/about-bg.avif') center/cover no-repeat;
+    padding: 80px 5%;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .about-overlay {
+    background: rgba(233,234,236,0.85); /* subtle overlay for readability */
+    padding: 60px 5%;
+    border-radius: 16px;
+  }
+  .about-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .about-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .about-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #3B82F6, #14B8A6);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .about-text p {
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2f2f2f;
+  }
+  .about-text strong {
+    color: #5b1b1b;
+  }
+  .about-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  .card-title {
+    margin: 0 0 6px;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .card-title.blue { color: #3B82F6; }
+  .card-title.teal { color: #14B8A6; }
+  .card-title.cyan { color: #06b6d4; }
+  .about-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
 
-    .container {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+  /* Responsive */
+  @media(max-width:900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
     }
-    .section {
-      margin-bottom: 50px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-    p {
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    .btn-back {
-      display: inline-block;
-      margin-top: 20px;
-      background: var(--primary);
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .btn-back:hover {
-      background: #7c2d2d;
-      transform: translateY(-2px);
-    }
+  }
 
-    @media(max-width: 768px) {
-      header h1 { font-size: 2rem; }
-    }
   </style>
 </head>
 <body>
+<section id="about">
+  <div class="about-overlay">
+    <div class="about-container">
+      
+      <!-- Heading -->
+      <h2 class="about-heading">What Is the Ozzuno Pre-IPO Basket?</h2>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>Curated Pre-IPO Basket Advisory</h1>
-    <p>Research-led selection of pre-issue shares, vintage staggering, and disciplined portfolio construction — designed to align with listing and lock-in cycles for potential liquidity windows.</p>
-    <img class="hero-image" src="assets/ipo-image.png" alt="Pre-IPO Investment Concept">
-  </header>
+      <!-- Two-column layout -->
+      <div class="about-grid">
+        <!-- Left text -->
+        <div class="about-text">
+          <p> 
+            Structured exposure to pre-issue equities through staggered vintages, designed to provide potential cyclic liquidity windows as holdings approach listing and lock-in expiries at different times.
+          </p>
+          <p> 
+            <strong>No assurance of returns</strong> — risk-aware construction balances near-term, mid-term, and longer-dated IPO candidates across sectors and geographies.
+          </p>
+          <p> 
+            Built for APAC family offices seeking disciplined, research-led access to pre-IPO opportunities with transparent origination, underwriting, and stewardship.
+          </p>
+        </div>
 
-  <div class="container">
-    <!-- What is a Pre-IPO Basket -->
-    <div class="section">
-      <h2>What is a Pre-IPO Basket?</h2>
-      <p>A <strong>pre-IPO basket</strong> is a carefully curated portfolio of promising private companies that are expected to list on the stock exchange in the future. The goal is to provide investors with early exposure to these companies before they go public, potentially benefiting from price appreciation once the IPO happens.</p>
+        <!-- Right cards -->
+        <div class="about-cards">
+          <div class="about-card">
+            <h3 class="card-title blue">Vintage Mix</h3>
+            <p>Near / Mid / Long-term horizons<br> Diversified time allocation across expected IPO cycles</p>
+          </div>
+          <div class="about-card">
+            <h3 class="card-title teal">Focus Markets</h3>
+            <p>APAC family offices & UHNW<br> Institutional-grade access for sophisticated investors</p>
+          </div>
+          <div class="about-card">
+            <h3 class="card-title cyan">Research Discipline</h3>
+            <p>CIO-grade underwriting standards<br> Rigorous selection, monitoring, and risk management</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Vintage Staggering -->
-    <div class="section">
-      <h2>Vintage Staggering – Why It Matters</h2>
-      <p>Instead of investing in a single vintage or time frame, Ozzuno’s approach staggers investments across multiple vintages:</p>
-      <ul>
-        <li>🕒 <strong>Near-Term:</strong> Companies expected to IPO in the next 6–12 months.</li>
-        <li>⏳ <strong>Mid-Term:</strong> Companies with a 12–24 month IPO horizon.</li>
-        <li>🌱 <strong>Long-Term:</strong> High-potential companies that may take 2+ years to list.</li>
-      </ul>
-      <p>This staggering helps create multiple potential liquidity windows over time rather than relying on a single exit event.</p>
-    </div>
-
-    <!-- Benefits Section -->
-    <div class="section">
-      <h2>Key Benefits</h2>
-      <ul>
-        <li>✅ Diversification across sectors, stages, and geographies</li>
-        <li>✅ Potential early-mover advantage in upcoming IPO candidates</li>
-        <li>✅ Research-backed selection with CIO-grade due diligence</li>
-        <li>✅ Staggered exits providing multiple liquidity opportunities</li>
-      </ul>
-    </div>
-
-    <!-- Risk Disclaimer -->
-    <div class="section">
-      <h2>Risks to Consider</h2>
-      <p>⚠️ Pre-IPO investments carry significant risk. Market conditions, regulatory changes, or company underperformance may lead to delayed IPOs or complete loss of capital. There is <strong>no assurance of returns</strong>.</p>
-    </div>
-
-    <!-- Back Button -->
-    <a href="index.html" class="btn-back">← Back to Home</a>
-
   </div>
+</section>
+
 
 </body>
 </html>
