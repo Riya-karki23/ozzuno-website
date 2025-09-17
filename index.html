@@ -35,7 +35,9 @@
     .nav-container {
       max-width:1200px; margin:auto;
       display:flex; justify-content:space-between; align-items:center;
-      padding:5px 5%;
+      padding:0px 5%;
+      max-height:80px;
+
     }
     nav ul { list-style:none; display:flex; gap:75px; font-size:0.95rem }
     nav .btn { padding:8px 16px; border-radius:8px; font-weight:600; margin-left:8px }
@@ -43,11 +45,8 @@
     .btn-ghost { background:transparent; border:1px solid var(--blue); color:var(--blue) }
 
     /* Hero */
-    header {
-      padding:100px 0 60px;
-      display:flex; flex-wrap:wrap; gap:60px; align-items:center;
-      max-width:1200px; margin:auto;
-    }
+   
+    
     .hero-text { flex:1 1 50% }
     .hero-text h1 {
       font-size:3rem; line-height:1.2; margin-bottom:20px; color:white;
@@ -75,26 +74,122 @@
       max-width:120%; border-radius:var(--radius);
     }
 
-    /* Credibility Bar */
-    .credibility-bar {
-      background:var(--bg);
-      border-top:1px solid rgba(255,255,255,0.05);
-      padding:12px 5%;
-    }
-    .credibility-inner {
-      max-width:1200px; margin:auto;
-      display:flex; justify-content:center; gap:40px;
-      font-size:0.9rem; color:var(--muted);
-    }
+
+
+/* Make header section full width with background video */
+.homepage-section {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh; /* Full-screen hero feel */
+  padding: 70px 5% 60px;
+  overflow: hidden;
+}
+
+/* Video styling */
+.homepage-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures video covers entire area */
+  z-index: -2;
+  filter: brightness(0.5); /* make video darker for better text contrast */
+}
+
+/* Optional overlay for even more contrast */
+.homepage-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* slightly dark overlay */
+  z-index: -1;
+}
+
+/* Hero text styling */
+.hero-text {
+  flex: 1 1 50%;
+  color: #fff; /* make all text white */
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #fff; /* white heading */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* improves readability */
+}
+
+.hero-text p {
+  color: #f5f5f5;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  max-width: 500px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.bullets li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #fff; /* bullet text white */
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero-ctas .btn-lg.primary {
+  background: #5b1b1b;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-weight: 600;
+}
+
+.hero-ctas .btn-lg.ghost {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-weight: 600;
+}
+
+.hero-graphic img {
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
   </style>
 </head>
 <body>
   <!-- NAV -->
   <nav>
     <div class="nav-container">
-      <div><img height="80px" width="70px" src="assets\logo-img.png"></div>
+      <div><a href="#home"><img height="130px" width="80px" src="assets\logo-img.png"></a></div>
       <ul>
-        <li><a href="#about">Home</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#faq">FAQs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -106,9 +201,16 @@
 
   <!-- HERO -->
   <header>
-    <div class="hero-text">
-      <h1><span style="color:black;">Curated Pre-IPO Access,</span><br><span>Engineered for Liquidity Windows</span></h1>
-      <p style="color:rgb(125, 125, 125)">Structured exposure to pre-issue equities through staggered vintages, designed to map potential cyclic liquidity windows with disciplined, research-led selection.</p>
+  <div class="homepage-section" id ="home">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="homepage-bg-video">
+      <source src="assets/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-text" >
+      <h1><span style="color:white;">Curated Pre-IPO Access,</span><br><span style="color:rgb(207, 205, 205)">Engineered for Liquidity Windows</span></h1>
+      <p style="color:rgb(223, 220, 220)">Structured exposure to pre-issue equities through staggered vintages, designed to map potential cyclic liquidity windows with disciplined, research-led selection.</p>
       <ul class="bullets">
         <li><span class="check">✔</span> Vintage staggering aligned to listing & lock-in cycles</li>
         <li><span class="check">✔</span> Sector-diversified, research-led pipeline</li>
@@ -120,20 +222,77 @@
       </div>
     </div>
     <div class="hero-graphic">
-      <!-- Replace with chart or keep image -->
-      <img src="assets\bg-image.jpeg" alt="Chart Illustration">
-    </div>
-  </header>
-
-  <!-- Credibility Bar -->
-  <div class="credibility-bar">
-    <div class="credibility-inner">
-      <span>📈 Research-Led</span>
-      <span>🛡 Compliance-First</span>
-      <span>📊 CIO-Grade Reporting</span>
-      <span>🌏 APAC Focus</span>
+      <img src="assets/bg-image.jpeg" alt="Chart Illustration">
     </div>
   </div>
+</header>
+
+
+
+ <div class="credibility-bar">
+  <div class="credibility-inner">
+    <span>📈 Research-Led</span>
+    <span>🛡 Compliance-First</span>
+    <span>📊 CIO-Grade Reporting</span>
+    <span>🌏 APAC Focus</span>
+    <span>🤝 Trusted by Family Offices</span>
+    <span>⚡ Seamless Execution</span>
+  </div>
+</div>
+
+<style>
+  /* CREDIBILITY BAR */
+  .credibility-bar {
+    background: linear-gradient(90deg, #dedbdb, #3d1313);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 14px 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    position: relative;
+    
+  }
+
+  .credibility-inner {
+    display: inline-block;
+    animation: scrollText 28s linear infinite;
+    will-change: transform;
+  }
+
+  .credibility-inner span {
+    margin: 0 50px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: default;
+  }
+
+  /* Hover effect: smooth grow + lighter accent */
+  .credibility-inner span:hover {
+    transform: scale(1.1);
+    color: #f1e4da;
+  }
+
+  @keyframes scrollText {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+  }
+
+  /* Pause on hover for readability */
+  .credibility-bar:hover .credibility-inner {
+    animation-play-state: paused;
+  }
+
+  /* Responsive: slightly smaller text & spacing */
+  @media(max-width: 768px) {
+    .credibility-inner span {
+      margin: 0 25px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
 
 
 <!-- services section-->
@@ -147,38 +306,47 @@
     <div class="services-grid">
       
       <!-- Service 1 -->
-      <div class="service-card">
-        <div class="service-icon">💡</div>
-        <h3  style="color:#5b1b1b">Smart-RTA Services</h3>
-        <p style="color:rgb(83, 82, 82)">
-          Tech-enabled Registrar & Transfer Agent solutions for funds, AIFs, and PMS. 
-          Automate investor servicing, reporting, and compliance with seamless digital workflows.
-        </p>
-      </div>
+     <!-- Service 1 -->
+<a href="smart-rta.html" class="service-link">
+  <div class="service-card">
+    <div class="service-icon">💡</div>
+    <h3 style="color:#5b1b1b">Smart-RTA Services</h3>
+    <p style="color:rgb(83, 82, 82)">
+      Tech-enabled Registrar & Transfer Agent solutions for funds, AIFs, and PMS.
+      Automate investor servicing, reporting, and compliance with seamless digital workflows.
+    </p>
+  </div>
+</a>
 
-      <!-- Service 2 -->
-      <div class="service-card">
-        <div class="service-icon">📈</div>
-        <h3 style="color:#5b1b1b">Curated Pre-IPO Basket Advisory</h3>
-        <p style="color:rgb(83, 82, 82)">
-          Research-led selection of pre-issue shares, vintage staggering, and disciplined portfolio construction 
-          designed to align with listing and lock-in cycles for potential liquidity windows.
-        </p>
-      </div>
+<!-- Service 2 -->
+<a href="pre-ipo-basket.html" class="service-link">
+  <div class="service-card">
+    <div class="service-icon">📈</div>
+    <h3 style="color:#5b1b1b">Curated Pre-IPO Basket Advisory</h3>
+    <p style="color:rgb(83, 82, 82)">
+      Research-led selection of pre-issue shares, vintage staggering, and disciplined portfolio construction
+      designed to align with listing and lock-in cycles for potential liquidity windows.
+    </p>
+  </div>
+</a>
 
-      <!-- Service 3 -->
-      <div class="service-card">
-        <div class="service-icon">🏦</div>
-        <h3 style="color:#5b1b1b">End-to-End IPO Services</h3>
-        <p style="color:rgb(83, 82, 82)">
-          Comprehensive IPO process support — from origination, structuring, and regulatory coordination 
-          to investor engagement, marketing, and post-listing compliance.
-        </p>
-      </div>
+<!-- Service 3 -->
+<a href="ipo-services.html" class="service-link">
+  <div class="service-card">
+    <div class="service-icon">🏦</div>
+    <h3 style="color:#5b1b1b">End-to-End IPO Services</h3>
+    <p style="color:rgb(83, 82, 82)">
+      Comprehensive IPO process support — from origination, structuring, and regulatory coordination
+      to investor engagement, marketing, and post-listing compliance.
+    </p>
+  </div>
+</a>
+
 
     </div>
   </div>
 </section>
+
 
 <style>
 /* SERVICES SECTION */
@@ -217,7 +385,7 @@
 .service-card {
   background:#dcdde0;
   padding:30px;
-  
+  min-height: 280px;
   border-radius:12px;
   text-align:left;
   transition:transform .3s ease, box-shadow .3s ease;
@@ -244,63 +412,70 @@
   font-size:.95rem;
   line-height:1.6;
 }
+
+
 </style>
- 
 
 
 
 
   <!-- ABOUT SECTION -->
 <section id="about">
-  <div class="about-container">
-    
-    <!-- Heading -->
-    <h2 class="about-heading">What Is the Ozzuno Pre-IPO Basket?</h2>
+  <div class="about-overlay">
+    <div class="about-container">
+      
+      <!-- Heading -->
+      <h2 class="about-heading">What Is the Ozzuno Pre-IPO Basket?</h2>
 
-    <!-- Two-column layout -->
-    <div class="about-grid">
-      <!-- Left text -->
-      <div class="about-text">
-        <p style="font-size:1.2rem"> 
-          Structured exposure to pre-issue equities through staggered vintages, designed to provide potential cyclic liquidity windows as holdings approach listing and lock-in expiries at different times.
-        </p>
-        <p style="font-size:1.2rem"> 
-          <strong style="color:#5b1b1b">No assurance of returns</strong> — risk-aware construction balances near-term, mid-term, and longer-dated IPO candidates across sectors and geographies.
-        </p>
-        <p style="font-size:1.2rem"> 
-          Built for APAC family offices seeking disciplined, research-led access to pre-IPO opportunities with transparent origination, underwriting, and stewardship.
-        </p>
+      <!-- Two-column layout -->
+      <div class="about-grid">
+        <!-- Left text -->
+        <div class="about-text">
+          <p> 
+            Structured exposure to pre-issue equities through staggered vintages, designed to provide potential cyclic liquidity windows as holdings approach listing and lock-in expiries at different times.
+          </p>
+          <p> 
+            <strong>No assurance of returns</strong> — risk-aware construction balances near-term, mid-term, and longer-dated IPO candidates across sectors and geographies.
+          </p>
+          <p> 
+            Built for APAC family offices seeking disciplined, research-led access to pre-IPO opportunities with transparent origination, underwriting, and stewardship.
+          </p>
+        </div>
+
+        <!-- Right cards -->
+        <div class="about-cards">
+          <div class="about-card">
+            <h3 class="card-title blue">Vintage Mix</h3>
+            <p>Near / Mid / Long-term horizons<br> Diversified time allocation across expected IPO cycles</p>
+          </div>
+          <div class="about-card">
+            <h3 class="card-title teal">Focus Markets</h3>
+            <p>APAC family offices & UHNW<br> Institutional-grade access for sophisticated investors</p>
+          </div>
+          <div class="about-card">
+            <h3 class="card-title cyan">Research Discipline</h3>
+            <p>CIO-grade underwriting standards<br> Rigorous selection, monitoring, and risk management</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Right cards -->
-      <div class="about-cards">
-        <div class="about-card">
-          <h3 class="card-title blue">Vintage Mix</h3>
-          <p>Near / Mid / Long-term horizons<br> Diversified time allocation across expected IPO cycles</p>
-        </div>
-        <div class="about-card">
-          <h3 class="card-title teal">Focus Markets</h3>
-          <p>APAC family offices & UHNW<br> Institutional-grade access for sophisticated investors</p>
-        </div>
-        <div class="about-card">
-          <h3 class="card-title cyan">Research Discipline</h3>
-          <p>CIO-grade underwriting standards<br> Rigorous selection, monitoring, and risk management</p>
-        </div>
-      </div>
     </div>
-
-    </div>
+  </div>
 </section>
 
 <style>
   /* ABOUT SECTION */
   #about {
-    background:#e9eaec;
-    color: #C9D1D9;
+    position: relative;
+    background: url('assets/about-bg.avif') center/cover no-repeat;
     padding: 80px 5%;
     font-family: 'Inter', sans-serif;
-          border-top:1px solid rgba(255,255,255,0.05);
-
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .about-overlay {
+    background: rgba(233,234,236,0.85); /* subtle overlay for readability */
+    padding: 60px 5%;
+    border-radius: 16px;
   }
   .about-container {
     max-width: 1200px;
@@ -308,57 +483,64 @@
   }
   .about-heading {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: black;
+    color: #1a1a1a;
     margin-bottom: 50px;
+    position: relative;
+  }
+  .about-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #3B82F6, #14B8A6);
+    margin: 12px auto 0;
+    border-radius: 2px;
   }
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: center;
+    align-items: start;
   }
   .about-text p {
     margin-bottom: 16px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color:rgb(84, 83, 83);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2f2f2f;
   }
   .about-text strong {
-    color: white;
+    color: #5b1b1b;
   }
   .about-cards {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
   }
   .about-card {
     background: #fff;
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 20px;
-    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   }
   .card-title {
     margin: 0 0 6px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
-  .card-title.blue { color: #3B82F6; font-size: 25px; }
-  .card-title.teal { color: #14B8A6; font-size: 25px; }
-  .card-title.cyan { color: #06b6d4; font-size: 25px;}
+  .card-title.blue { color: #3B82F6; }
+  .card-title.teal { color: #14B8A6; }
+  .card-title.cyan { color: #06b6d4; }
   .about-card p {
-    font-size: .95rem;
-    color: #717272;
-  }
-  .about-disclaimer {
-    margin-top: 40px;
-    font-size: .9rem;
-    color: #8A94A6;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding-top: 12px;
-    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
   }
 
   /* Responsive */
@@ -378,93 +560,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<style>
-  /* MARKET CONTEXT */
-  #market {
-    background:#0B1220;
-    color:#C9D1D9;
-    padding:80px 5%;
-    font-family:'Inter',sans-serif;
-  }
-  .market-container {
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-  }
-  .market-text h2 {
-    font-size:1.8rem;
-    font-weight:700;
-    color:white;
-    margin-bottom:20px;
-  }
-  .market-text p {
-    margin-bottom:16px;
-    line-height:1.6;
-  }
-
-  /* Chart */
-  .market-chart h3 {
-    margin-bottom:20px;
-    font-size:1.2rem;
-    font-weight:600;
-    color:white;
-  }
-  .bar-row {
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:15px;
-  }
-  .bar-row span { font-size:.9rem; }
-  .bar {
-    flex-grow:1;
-    height:10px;
-    background:#1f2937;
-    border-radius:6px;
-    overflow:hidden;
-  }
-  .fill {
-    height:100%;
-    border-radius:6px;
-  }
-  .fill.gray { background:#9ca3af; }
-  .fill.blue { background:#3B82F6; }
-  .percent {
-    font-size:.9rem;
-    color:#C9D1D9;
-  }
-  .chart-note {
-    font-size:.85rem;
-    color:#8A94A6;
-    margin-top:10px;
-    text-align:center;
-  }
-
-  @media(max-width:900px){
-    .market-container { grid-template-columns:1fr; }
-  }
-</style>
-
-
-
-
-<!-- FAQ SECTION -->
 <section id="faq">
   <div class="faq-container">
-    <h2 style="color:black;">Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions</h2>
 
     <div class="faq-item">
       <button class="faq-question">What is a pre-IPO basket?</button>
@@ -508,98 +606,120 @@
       </div>
     </div>
 
-  
+    <p class="faq-disclaimer">Investments are subject to market risk. Please read all disclosures carefully before investing.</p>
   </div>
 </section>
 
 <style>
   /* FAQ SECTION */
   #faq {
-    background:#e9eaec;
-    padding:80px 10%;
-    font-family:'Inter',sans-serif;
-    color:#C9D1D9;
-       
-
+    background: linear-gradient(135deg, #f7f7f8, #e9eaec);
+    padding: 80px 10%;
+    font-family: 'Inter', sans-serif;
   }
   #faq h2 {
-    text-align:center;
-    font-size:1.8rem;
-    font-weight:700;
-    margin-bottom:40px;
-    color:white;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+    position: relative;
   }
+  #faq h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #3B82F6, #14B8A6);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
   .faq-item {
-    border-bottom:1px solid #dddddf;
-    margin-bottom:10px;
-    
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 16px;
+    padding: 0 16px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
   }
+  .faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
   .faq-question {
-    width:100%;
-    background:none;
-    border:none;
-    text-align:left;
-    padding:18px 0;
-    font-size:1rem;
-    font-weight:500;
-   color:black;
-   font-weight: medium;
-    cursor:pointer;
-    position:relative;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 18px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .faq-question::after {
-    content:"+";
-    position:absolute;
-    right:0;
-    font-size:1.2rem;
-    transition:transform .3s;
+    content: "+";
+    font-size: 1.4rem;
+    color: #3B82F6;
+    transition: transform 0.3s, color 0.3s;
   }
   .faq-question.active::after {
-    content:"-";
-    transform:rotate(180deg);
+    content: "-";
+    transform: rotate(180deg);
+    color: #14B8A6;
   }
+
   .faq-answer {
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .4s ease;
-    color:#9CA3AF;
-    font-size:.95rem;
-    line-height:1.6;
-    padding-left:5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 5px;
   }
   .faq-answer p {
-    margin:10px 0 20px;
+    margin: 0 0 16px;
   }
+  .faq-answer.show {
+    opacity: 1;
+    max-height: 500px;
+    padding-bottom: 12px;
+  }
+
   .faq-disclaimer {
-    margin-top:30px;
-    font-size:.85rem;
-    color:#6B7280;
-    text-align:center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #6B7280;
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media(max-width: 768px) {
+    #faq {
+      padding: 60px 6%;
+    }
+    #faq h2 {
+      font-size: 1.8rem;
+    }
   }
 </style>
 
 <script>
-  // FAQ Accordion Toggle
-  document.querySelectorAll(".faq-question").forEach(button => {
-    button.addEventListener("click", () => {
-      const answer = button.nextElementSibling;
-
-      // collapse all others
-      document.querySelectorAll(".faq-answer").forEach(el => {
-        if (el !== answer) {
-          el.style.maxHeight = null;
-          el.previousElementSibling.classList.remove("active");
-        }
-      });
-
-      // toggle clicked
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-        button.classList.remove("active");
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        button.classList.add("active");
-      }
+  // Toggle FAQ answers
+  const questions = document.querySelectorAll(".faq-question");
+  questions.forEach(q => {
+    q.addEventListener("click", () => {
+      q.classList.toggle("active");
+      const answer = q.nextElementSibling;
+      answer.classList.toggle("show");
     });
   });
 </script>
@@ -612,29 +732,29 @@
 <!-- CONTACT SECTION -->
 <section id="contact">
   <div class="contact-container">
-    <h2 style="color:#0B1220">Get In Touch</h2>
-    <p style="color:rgb(102, 99, 99)">Contact us to learn more about the Ozzuno Pre-IPO Basket and our research-led approach.</p>
+    <h2>Get In Touch</h2>
+    <p style="text-align:center ;">Contact us to learn more about the Ozzuno Pre-IPO Basket and our research-led approach.</p>
 
     <div class="contact-grid">
       <!-- Contact Form -->
       <form class="contact-form" id="contactForm">
         <label>
-         Name
-          <input type="text" name="name" placeholder="" required>
+          Name
+          <input type="text" name="name" required>
         </label>
         <label>
           Email
-          <input type="email" name="email" placeholder="" required>
+          <input type="email" name="email" required>
         </label>
         <label>
           Organization
-          <input type="text" name="organization" placeholder="">
+          <input type="text" name="organization">
         </label>
         <label>
           Message
-          <textarea name="message" placeholder="" required></textarea>
+          <textarea name="message" required></textarea>
         </label>
-        <button  type="submit" class="btn-submit">Send Message</button>
+        <button type="submit" class="btn-submit">Send Message</button>
         <p class="privacy-note">Your privacy is important to us. We will not share your information with third parties.</p>
       </form>
 
@@ -643,29 +763,29 @@
         <div class="info-item">
           <span class="icon">📞</span>
           <div>
-            <h4 style="color:#5b1b1b">Contact</h4>
+            <h4>Contact</h4>
             <p>+91-9004951331</p>
           </div>
         </div>
         <div class="info-item">
           <span class="icon">📧</span>
           <div>
-            <h4 style="color:#5b1b1b">Email</h4>
+            <h4>Email</h4>
             <p>ankit@ozzuno.com</p>
           </div>
         </div>
         <div class="info-item">
           <span class="icon">🏢</span>
           <div>
-            <h4 style="color:#5b1b1b">Headquarters</h4>
+            <h4>Headquarters</h4>
             <p>Navi Mumbai</p>
           </div>
         </div>
         <div class="info-item">
           <span class="icon">👥</span>
           <div>
-            <h4 style="color:#5b1b1b">Address</h4>
-            <p style="text-align:left">Kamdhenu 23 west, 13th Floor, Office No 1301, Koparkhairane, Navi Mumbai, Maharastra, India</p>
+            <h4>Address</h4>
+            <p>Kamdhenu 23 West, 13th Floor, Office No 1301, Koparkhairane, Navi Mumbai, Maharashtra, India</p>
           </div>
         </div>
       </div>
@@ -676,107 +796,150 @@
 <style>
   /* CONTACT SECTION */
   #contact {
-    background:#e9eaec;
-    color:#C9D1D9;
-    padding:80px 5%;
-    font-family:'Inter',sans-serif;
+    background: linear-gradient(135deg, #f7f7f8, #e9eaec);
+    padding: 80px 5%;
+    font-family: 'Inter', sans-serif;
   }
   #contact h2 {
-    text-align:center;
-    font-size:1.8rem;
-    color:#fff;
-    font-weight:700;
-    margin-bottom:10px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0B1220;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  #contact h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #3B82F6, #14B8A6);
+    margin: 12px auto 0;
+    border-radius: 2px;
   }
   #contact p {
-    text-align:center;
-    color:#9CA3AF;
-    margin-bottom:40px;
+   
+    color: #4b4b4b;
+    margin-bottom: 40px;
+    font-size: 1rem;
   }
   .contact-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    max-width:1000px;
-    margin:0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
+
+  /* Contact Form Styling */
   .contact-form {
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+  }
+  .contact-form:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   }
   .contact-form label {
-    display:flex;
-    flex-direction:column;
-    font-size:.9rem;
-    color:#5b1b1b;
+    display: flex;
+    flex-direction: column;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #0B1220;
   }
   .contact-form input,
   .contact-form textarea {
-    margin-top:6px;
-    padding:12px;
-    border-radius:6px;
-    background:white;
-    color:#fff;
-    font-size:.95rem;
-    transition:border .3s;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #f9fafb;
+    color: #333;
+    font-size: .95rem;
+    transition: border 0.3s, box-shadow 0.3s;
   }
   .contact-form input:focus,
   .contact-form textarea:focus {
-    outline:none;
-    border:1px solid #3B82F6;
+    outline: none;
+    border: 1px solid #3B82F6;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.2);
+    background: #fff;
   }
   .contact-form textarea {
-    resize:none;
-    height:120px;
+    resize: none;
+    height: 120px;
   }
   .btn-submit {
-  background-color: #5b1b1b;
-    color:#fff;
-    padding:12px;
-    border:none;
-    border-radius:6px;
-    font-weight:500;
-    cursor:pointer;
-    transition:opacity .3s;
+    background: linear-gradient(90deg, #5b1b1b, #7c2d2d);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
   }
   .btn-submit:hover {
-    opacity:.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(91, 27, 27, 0.3);
   }
   .privacy-note {
-    font-size:.8rem;
-    color:#6B7280;
-    margin-top:10px;
-    text-align:center;
-  }
-  .contact-info {
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-    justify-content:center;
-  }
-  .info-item {
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-  }
-  .info-item .icon {
-    font-size:1.5rem;
-  }
-  .info-item h4 {
-    font-size:1rem;
-    color:#fff;
-    margin-bottom:4px;
-  }
-  .info-item p {
-    margin:0;
-    font-size:.9rem;
-    color:#9CA3AF;
+    font-size: .8rem;
+    color: #6B7280;
+    margin-top: 10px;
+    text-align: center;
   }
 
-  @media(max-width:900px) {
+  /* Contact Info */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+  }
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .info-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  .info-item .icon {
+    font-size: 1.5rem;
+    color: #3B82F6;
+    transition: transform 0.3s;
+  }
+  .info-item:hover .icon {
+    transform: scale(1.2);
+    color: #14B8A6;
+  }
+  .info-item h4 {
+    font-size: 1rem;
+    color: #0B1220;
+    margin-bottom: 4px;
+  }
+  .info-item p {
+    margin: 0;
+    font-size: .9rem;
+    color: #4b4b4b;
+  }
+
+  /* Responsive */
+  @media(max-width: 900px) {
     .contact-grid {
-      grid-template-columns:1fr;
+      grid-template-columns: 1fr;
     }
   }
 </style>
