@@ -90,7 +90,39 @@
     color: #555;
     line-height: 1.5;
   }
+ .btn-back {
+      align-self: center;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+       background: #7c2d2d;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(91, 27, 27, 0.3);
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn-back:hover {
+      background: #7c2d2d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(91, 27, 27, 0.4);
+    }
 
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width: 768px) {
+      .hero-card h1 { font-size: 2rem; }
+      .hero-card p { font-size: 1rem; }
+      .smart-acronym { grid-template-columns: 40px 1fr; }
+      .section { padding: 20px; }
+    }
   /* Responsive */
   @media(max-width:900px) {
     .about-grid {
@@ -142,6 +174,9 @@
 
     </div>
   </div>
+  <div style="text-align: center; "  >
+   <a href="index.html" class="btn-back">← Back to Home</a>
+   </div>
 </section>
 
 
