@@ -26,7 +26,7 @@
     /* Navbar */
     nav {
       position:sticky; top:0; z-index:1000;
-       background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, #f7f7f8, #e9eaec);
       color:black;
       font-weight: bold;
       backdrop-filter: blur(10px);
@@ -35,7 +35,7 @@
     .nav-container {
       max-width:1200px; margin:auto;
       display:flex; justify-content:space-between; align-items:center;
-      max-height:120px;
+      max-height:150px;
       padding:10px 0;
 
     }
@@ -186,7 +186,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-container">
-      <div><a href="#home"><img height="180px" width="130px" src="assets\logo-img.png"></a></div>
+      <div><a href="#home"><img height="250px" width="180px" src="assets\logo-img.png"></a></div>
      
       <div>
         <a class="btn btn-primary" href="#contact">Contact Us</a>
@@ -219,7 +219,7 @@
           <div class="service-icon">💡</div>
           <h3>Smart-RTA Services</h3>
           <p>
-            Custom & Lucid Agent solutions for funds, AIFs, and PMS.
+            Customised & Lucid Agent solutions for funds, AIFs, and PMS.
             Automate investor servicing, reporting, and compliance with seamless digital workflows.
           </p>
         </div>
@@ -256,7 +256,7 @@
 <style>
 /* ===== Services Section ===== */
 #services {
-  padding: 70px 5%;
+  padding: 40px 5%;
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #f7f7f8, #e9eaec);
 }
@@ -267,13 +267,69 @@
   text-align: center;
 }
 
+
+
+
 .services-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 10px;
-  animation: fadeDown 0.8s ease forwards;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #5b1b1b, #9b3b3b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  animation: fadeDown 0.8s ease forwards, glow 2s ease-in-out infinite alternate;
 }
+
+.services-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 5px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, #5b1b1b, #9b3b3b);
+  border-radius: 3px;
+  animation: underlineGrow 0.8s ease forwards;
+}
+
+.services-subtext {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Keyframes for animation */
+@keyframes glow {
+  from { text-shadow: 0 0 5px rgba(91, 27, 27, 0.3); }
+  to { text-shadow: 0 0 20px rgba(155, 59, 59, 0.6); }
+}
+
+@keyframes underlineGrow {
+  from { width: 0; opacity: 0; }
+  to { width: 100px; opacity: 1; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 
 .services-subtext {
   font-size: 1.1rem;

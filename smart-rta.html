@@ -4,230 +4,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ozzuno | Smart-RTA Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #5b1b1b;
-      --secondary: #3B82F6;
-      --text-light: #fff;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-   body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text-light);
-  position: relative; /* Needed for overlay positioning */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("assets/smart-img.webp") no-repeat center center/cover;
-  filter: blur(6px) brightness(0.9); /* Adjust blur and brightness */
-  z-index: -1; /* Keep behind content */
-}
-
-
-    /* Page Container */
-    .page-container {
-      max-width: 1100px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f7f7;
     }
 
-    /* Header */
-    .hero-card {
-      text-align: center;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(6px);
-      padding: 50px 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    .hero-card h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    .hero-card p {
-      font-size: 1.25rem;
-      opacity: 0.95;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* Section Cards */
-    .section {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease-out;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 18px;
-      color: #ffffff;
+    /* SECTION BACKGROUND */
+    #smart-rta {
       position: relative;
+      background: url('assets/smart-imggg.jpg') center/cover no-repeat;
+      padding: 80px 5%;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
-    h2::after {
+    .overlay {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 60px 5%;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* HEADING */
+    .heading {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 50px;
+      letter-spacing: 0.5px;
+    }
+    .heading::after {
       content: "";
       display: block;
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(to right, var(--secondary), #14B8A6);
-      margin-top: 6px;
+      width: 90px;
+      height: 4px;
+      background: linear-gradient(to right, #3B82F6, #14B8A6);
+      margin: 14px auto 0;
       border-radius: 2px;
     }
-    p {
-      margin-bottom: 15px;
-      font-size: 1.05rem;
-      color: #f2f2f2;
+
+    /* GRID LAYOUT */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .text p {
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.8;
+      color: #333;
+    }
+    .text strong {
+      color: #5b1b1b;
+      font-weight: 700;
     }
 
-    /* SMART Acronym Grid */
+    /* SMART ACRONYM GRID */
     .smart-acronym {
       display: grid;
-      grid-template-columns: 50px 1fr;
+      grid-template-columns: 45px 1fr;
       row-gap: 14px;
       column-gap: 10px;
-      margin-top: 10px;
+      margin-top: 20px;
+      padding: 20px;
+      background: #fdfdfd;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
     }
     .letter {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      color: var(--secondary);
-    }
-
-    /* Checklist */
-    .checklist p::before {
-      content: "✔";
-      margin-right: 8px;
       color: #14B8A6;
-      font-weight: bold;
+      text-align: center;
     }
 
-    /* Back Button */
+    /* CARD STYLE SECTIONS */
+    .about-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    .card-icon {
+      font-size: 2rem;
+      color: #3B82F6;
+      flex-shrink: 0;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3B82F6;
+    }
+    .card p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #444;
+      margin: 0;
+    }
+
+    /* BACK BUTTON */
     .btn-back {
-      align-self: center;
-      background: var(--primary);
+      background: #7c2d2d;
       color: #fff;
       text-decoration: none;
-      padding: 14px 24px;
+      padding: 14px 28px;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       box-shadow: 0 4px 14px rgba(91, 27, 27, 0.3);
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 40px;
     }
     .btn-back:hover {
-      background: #7c2d2d;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(91, 27, 27, 0.4);
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media(max-width: 768px) {
-      .hero-card h1 { font-size: 2rem; }
-      .hero-card p { font-size: 1rem; }
-      .smart-acronym { grid-template-columns: 40px 1fr; }
-      .section { padding: 20px; }
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="page-container">
-    
-    <!-- HERO CARD -->
-    <div class="hero-card">
-      <h1>Smart-RTA Services</h1>
-      <p>Custom & Lucid solutions for Funds, AIFs, and PMS — enabling automation, compliance, and seamless investor servicing.</p>
+<section id="smart-rta">
+  <div class="overlay">
+    <div class="container">
+
+      <!-- HEADING -->
+      <h2 class="heading">Smart-RTA Services</h2>
+
+      <!-- INTRO + SMART -->
+      <div class="grid">
+        <!-- Left Content -->
+        <div class="text">
+          <p><strong>RTA</strong> stands for <strong>Registrar & Transfer Agent</strong>. They maintain investor records, process transactions, and ensure compliance.</p>
+          <p>Our <strong>Smart-RTA</strong> platform automates these functions, reduces errors, and provides a transparent, real-time view for fund managers & investors.</p>
+          
+          <h3 style="font-weight:700; margin-top:20px;">SMART-RTA Acronym</h3>
+          <div class="smart-acronym">
+            <div class="letter">S</div> <div>Simple</div>
+            <div class="letter">M</div> <div>Moral</div>
+            <div class="letter">A</div> <div>Accountable</div>
+            <div class="letter">R</div> <div>Responsive</div>
+            <div class="letter">T</div> <div>Transparent</div>
+            <div class="letter">R</div> <div>Registrar</div>
+            <div class="letter">T</div> <div>Transfer</div>
+            <div class="letter">A</div> <div>Agent</div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="about-cards">
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <div>
+              <h3>Streamlined Processes</h3>
+              <p>Investor Onboarding & KYC simplified, digitized, and faster.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">📜</div>
+            <div>
+              <h3>Regulatory Ready</h3>
+              <p>Audit-ready reports and full compliance with SEBI & AMFI norms.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon">📊</div>
+            <div>
+              <h3>Real-Time Insights</h3>
+              <p>Live data dashboards for fund managers and investors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div style="text-align:center;">
+        <a href="index.html" class="btn-back">← Back to Home</a>
+      </div>
+
     </div>
-
-    <!-- About RTA -->
-    <div class="section">
-      <h2>What is RTA?</h2>
-      <p><strong>RTA</strong> stands for <strong>Registrar & Transfer Agent</strong>. RTAs act as the record-keepers for mutual funds, AIFs, PMS, and other investment products — maintaining investor records, processing transactions, generating reports, and ensuring regulatory compliance.</p>
-      <p>Our Smart-RTA platform digitalizes and automates these functions, reducing errors, improving efficiency, and giving both fund managers and investors a transparent, real-time view of their holdings.</p>
-    </div>
-
-    <!-- SMART Acronym -->
-    <div class="section">
-  <h2>What Does SMART Stand For?</h2>
-  <div class="smart-acronym">
-    <div class="letter">S</div> 
-    <div><strong>Simple:</strong> Easy-to-use platform with intuitive workflows and minimal complexity.</div>
-
-    <div class="letter">M</div> 
-    <div><strong>Modern:</strong> Cloud-first, API-driven architecture designed for scalability and speed.</div>
-
-    <div class="letter">A</div> 
-    <div><strong>Accountable:</strong> Full audit trails and compliance-ready reporting for every action.</div>
-
-    <div class="letter">R</div> 
-    <div><strong>Responsive:</strong> Fast, real-time updates with mobile-friendly dashboards.</div>
-
-    <div class="letter">T</div> 
-    <div><strong>Transparent:</strong> Clear data visibility for investors, managers, and regulators.</div>
   </div>
-</div>
-
-
-    <!-- Why Choose -->
-    <div class="section checklist">
-      <h2>Why Choose Ozzuno Smart-RTA?</h2>
-      <p>Streamlined Investor Onboarding & KYC</p>
-      <p>Automated Dividend, Allotment & Reporting</p>
-      <p>Regulatory Compliant & Audit-Ready</p>
-      <p>Real-Time Data for Fund Managers & Clients</p>
-    </div>
-
-    <!-- Back Button -->
-    <a href="index.html" class="btn-back">← Back to Home</a>
-
-  </div>
-
-  <script>
-    // Fade-in on scroll
-    const sections = document.querySelectorAll('.section');
-    const revealSections = () => {
-      sections.forEach(section => {
-        const position = section.getBoundingClientRect().top;
-        if (position < window.innerHeight - 50) {
-          section.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealSections);
-    window.addEventListener('load', revealSections);
-  </script>
+</section>
 
 </body>
 </html>
